@@ -25,6 +25,8 @@ function processFirstItem(stringList, callback) {
 
 /* Task 1: `counterMaker`
  * Study the code for counter1 and counter2. Answer the questions below.
+ *  
+ * 
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
@@ -54,17 +56,18 @@ function counter2() {
 
 /* Task 2: inning() 
 
-Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
+Write a function called `inning` that returns a random number of points that a team scored 
+in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(){
+  return Math.floor(Math.random() *3);
 }
 
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` 
+(from above) and a number of innings and and returns the final score of the game in the form 
+of an object.
 
 For example, 
 
@@ -76,11 +79,19 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore( inningScore, innings){
+  let score ={
+  "Home" : 0,
+  "Away" : 0,
 }
+  for(i=0; i<innings; i++){
+      score["Home"] += inningScore();
+      score["Away"] += inningScore();
+  };
+  return score;
+}
+
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
@@ -103,8 +114,24 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(inningScore, innings) {
+  let homeScores = [], awayScores = []; 
+  let homeFinal = 0; awayFinal = 0;
+  for(i=1; i<= innings; i++){
+      homeScores.push(inningScore());
+      awayScores.push(inningScore());
+      if(i===1){
+        console.log( "1st inning: " + awayScores[0] + " - " + homeScores[0]);
+        homeFinal+= homeScores[0];
+        awayFinal+= awayScores[0];
+      }
+      else{
+        console.log(i + "th inning: " + awayScores[i-1] + " - " + homeScores[i-1]);
+        homeFinal+= homeScores[i-1];
+        awayFinal+= awayScores[i-1];
+      }
+  }
+  return "Final Score: " + awayFinal + " - " + homeFinal; 
 }
 
-
+console.log(scoreboard(inning, 9));
