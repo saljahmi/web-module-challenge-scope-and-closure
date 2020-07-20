@@ -25,15 +25,20 @@ function processFirstItem(stringList, callback) {
 
 /* Task 1: `counterMaker`
  * Study the code for counter1 and counter2. Answer the questions below.
- *  
- * 
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter1 uses a closure, block scoped? while other is opposite
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter 1, because its returned in the counterMaker (parent-child nested)
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * First: good if invoked multiple times with different paramters
+ * Second: good if invoked once, since let count is global
+ * 
 */
 
 // counter1 code
