@@ -65,8 +65,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+  The closure is used in the return of the function. You can tell because a function is defined after the return. You also see that it references a value from the outer function. 
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+  The newRoll value could change, so the number Dan gets could change. "Dan" stays the same, since the argument that gets passed into the function does not change in this function. 
+
 c. What is the lexical scope of `newRoll`? 
+
+  newRoll is in the closure, so it can only be accessed locally within the function (it has a local scope). newRoll cannot be accessed by the outer function.  
 
 ### Task 2c - Exit Ticket
 
