@@ -125,15 +125,20 @@ function scoreboard(inningScore, innings) {
   for(i=1; i<= innings; i++){
       homeScores.push(inningScore());
       awayScores.push(inningScore());
+      homeFinal+= homeScores[i-1];
+      awayFinal+= awayScores[i-1];
       if(i===1){
-        console.log( "1st inning: " + awayScores[0] + " - " + homeScores[0]);
-        homeFinal+= homeScores[0];
-        awayFinal+= awayScores[0];
+        console.log( "1st inning: " + awayScores[i-1] + " - " + homeScores[i-1]);
+      }
+      else if(i===2){
+        console.log( "2nd inning: " + awayScores[i-1] + " - " + homeScores[i-1]);
+      }
+      else if(i===3){
+        console.log( "3rd inning: " + awayScores[i-1] + " - " + homeScores[i-1]);
       }
       else{
         console.log(i + "th inning: " + awayScores[i-1] + " - " + homeScores[i-1]);
-        homeFinal+= homeScores[i-1];
-        awayFinal+= awayScores[i-1];
+        
       }
   }
   return "Final Score: " + awayFinal + " - " + homeFinal; 

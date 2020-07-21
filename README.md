@@ -42,6 +42,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+Closure is when a function has another function defined within it. This inner function can access info from the outer function's scope. The inner function is returned in the outer function. This is similar to callback, in the sense that a function is used inside another function. 
+
 2. Study the following code, then answer the questions below.
 
 ```js
