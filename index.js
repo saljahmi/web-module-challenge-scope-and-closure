@@ -38,7 +38,7 @@ function processFirstItem(stringList, callback) {
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
  *  counter2 is preferable when the count variable needs to be accessed throughout the program. 
- *  counter1 is preferable when you don't want the the count value to be redeclared throughout the program. 
+ *  counter1 is preferable when you don't want the the count value to be reassigned throughout the program (count is protected)
 */
 
 // counter1 code
@@ -145,3 +145,5 @@ function scoreboard(inningScore, innings) {
 }
 
 console.log(scoreboard(inning, 9));
+
+// getInningScore- uses inning as cb and returns object with away and home scores
