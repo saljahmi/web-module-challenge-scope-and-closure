@@ -28,17 +28,17 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
- * counter1 uses a closure, block scoped? while other is opposite
+ *  counter1 was created in a function with a closure, and used a value defined in the scope of the counterMaker function.
+ *  counter 2 was made without one, and uses a value defined globally. 
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * counter 1, because its returned in the counterMaker (parent-child nested)
+ *  counter 1, because a function is returned in the counterMaker and that function accesses a value in the scope of the outer funtion. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
- * First: good if invoked multiple times with different paramters
- * Second: good if invoked once, since let count is global
- * 
+ *  counter2 is preferable when the count variable needs to be accessed throughout the program. 
+ *  counter1 is preferable when you don't want the the count value to be redeclared throughout the program. 
 */
 
 // counter1 code
