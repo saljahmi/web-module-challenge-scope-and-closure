@@ -42,6 +42,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+Closure is when a function has another function defined within it. This inner function can access info from the outer function's scope. The inner function is returned in the outer function. This is similar to callback, in the sense that a function is used inside another function. 
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +65,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+  The closure is used in the return of the function. You can tell because a function is defined after the return. You also see that it references a value from the outer function. 
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+  The newRoll value could change, so the number Dan gets could change. "Dan" stays the same, since the argument that gets passed into the function does not change in this function. 
+
 c. What is the lexical scope of `newRoll`? 
+
+  newRoll is in the closure, so it can only be accessed locally within the function (it has a local scope). newRoll cannot be accessed by the outer function.  
 
 ### Task 2c - Exit Ticket
 
